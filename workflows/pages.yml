@@ -4,24 +4,39 @@ on:
   push:
     branches: [ "main" ]
 
-# Permissions requises par Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read       # lecture du repo
+  pages: write         # publier sur Pages
+  id-token: write      # OIDC pour Pages
 
-# Empêche deux déploiements concurrents
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Étape « build » – pour un site statique, on se contente de packager
   build:
     runs-on: ubuntu-latest
     steps:
-       #- uses: actions/checkout@v4
+      # 1) Cloner le dépôt
+      - uses: actions/checkout@v4
 
-      # 👉 Si tu n’as rien à « builder », on laisse juste un echo
-      - name: Build step (no
+      # 2) Aucune étape de build nécessaire (HTML statique)
+      - name: Build step (nothing to build)
+        run: echo "Skip build"
 
+      # 3) Packager le contenu du repo pour Pages
+      - uses: actions/upload-pages-artifact@v2
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # 4) Déployer l'artefact sur GitHub Pages
+      - id: deployment
+        uses: actions/deploy-pages@v2
