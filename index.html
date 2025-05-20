@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lahat Fall - Portfolio Cybersécurité</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    /* animation fade-in */
+    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+    .animate-fade-in { animation: fadeIn 0.6s ease-out both; }
+  </style>
+  <script>
+    // Dark‑mode toggle
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      // Save preference
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+    // Apply saved preference on load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  <!-- Sticky navigation -->
+  <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/70 dark:bg-gray-900/80 shadow-sm">
+    <div class="max-w-4xl mx-auto flex items-center justify-between px-6 py-3 text-sm">
+      <a href="#top" class="font-semibold text-blue-700 dark:text-blue-400">Lahat Fall</a>
+      <div class="hidden md:flex gap-4">
+        <a href="#apropos" class="hover:text-blue-600 dark:hover:text-blue-300">À propos</a>
+        <a href="#projets" class="hover:text-blue-600 dark:hover:text-blue-300">Projets</a>
+        <a href="#competences" class="hover:text-blue-600 dark:hover:text-blue-300">Compétences</a>
+        <a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-300">Expérience</a>
+        <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-300">Contact</a>
+      </div>
+      <button onclick="toggleTheme()" class="ml-4 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700" aria-label="Toggle dark mode">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+          <path d="M12 2a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1Zm5.657 3.343a1 1 0 0 1 1.414 0l.707.707a1 1 0 0 1-1.414 1.414l-.707-.707a1 1 0 0 1 0-1.414ZM12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm9-5a1 1 0 0 1-1 1h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 1 1Zm-3.343 7.657a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0ZM12 19a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1Zm-7.657-1.657a1 1 0 1 1-1.414 1.414l-.707-.707a1 1 0 0 1 1.414-1.414l.707.707ZM5 12a1 1 0 0 1-1-1V10a1 1 0 0 1 2 0v1a1 1 0 0 1-1 1Zm-.657-6.657a1 1 0 0 1 1.414-1.414l.707.707A1 1 0 0 1 5.05 6.05l-.707-.707Z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Header hero -->
+  <header id="top" class="pt-20 md:pt-24 pb-12 bg-blue-800 text-white shadow">
+    <div class="max-w-4xl mx-auto px-6 animate-fade-in">
+      <h1 class="text-4xl font-bold mb-2">Lahat Fall</h1>
+      <p class="text-xl">Analyste SOC Niveau I | Cybersécurité & Criminalistique Numérique</p>
+      <p class="text-md mb-4">B.Sc. @ UQAC • Dev Python • Spécialiste défense & détection d’intrusion</p>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <span>📧 <a href="mailto:lahatfall@hotmail.fr" class="underline">lahatfall@hotmail.fr</a></span>
+        <span>📍 Chicoutimi (QC)</span>
+        <a href="https://linkedin.com/in/lahat-fall" class="underline">LinkedIn</a>
+        <a href="https://github.com/LAHAT-FALL" class="underline">GitHub</a>
+        <button onclick="window.print()" class="ml-auto bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-900">📄 PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+    <!-- À propos -->
+    <section id="apropos" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">À propos de moi</h2>
+      <p class="leading-7">Analyste SOC Niveau&nbsp;I et étudiant en cybersécurité. J’assure le triage d’alertes, la surveillance continue des systèmes et la réponse initiale aux incidents. Curieux et passionné, je développe des projets pratiques pour améliorer mes compétences et je partage mes travaux afin d’aider la communauté.</p>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Projets en cours</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">Microsoft Sentinel</h3>
+          <p class="text-sm">Intégration de logs Azure, détection d'incidents via KQL.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">Honeypot ElasticPot</h3>
+          <p class="text-sm">Déploiement d’un honeypot, collecte d’IOCs et analyse ELK.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">CTF Write‑ups</h3>
+          <p class="text-sm">Résolution documentée de challenges TryHackMe & HackTheBox.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">Threat Hunting (YARA/RITA)</h3>
+          <p class="text-sm">Lab d’analyse proactive et détection via YARA et RITA.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">Automatisation SOAR</h3>
+          <p class="text-sm">Workflows Splunk SOAR & Azure Logic Apps pour réponse incidents.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">Détection & Sigma</h3>
+          <p class="text-sm">Mapping MITRE ATT&CK, ingénierie de règles Sigma / Elastic.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">Threat Intel Lab</h3>
+          <p class="text-sm">MISP, VirusTotal – collecte et corrélation d’indicateurs.</p>
+        </div>
+        <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="font-semibold text-lg mb-2">Timeline Forensic</h3>
+          <p class="text-sm">Analyse chronologique d’incidents avec Timesketch.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack SOC -->
+    <section id="stack" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Stack SOC</h2>
+      <div class="grid sm:grid-cols-2 gap-6 text-base text-gray-800 dark:text-gray-100">
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow">
+          <h3 class="font-semibold mb-2">SIEM</h3>
+          <p>Splunk ▪️ ELK ▪️ Wazuh</p>
+        </div>
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow">
+          <h3 class="font-semibold mb-2">EDR / HIDS</h3>
+          <p>Wazuh ▪️ OSSEC ▪️ Velociraptor</p>
+        </div>
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow">
+          <h3 class="font-semibold mb-2">NDR</h3>
+          <p>Zeek ▪️ Suricata ▪️ RITA</p>
+        </div>
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow">
+          <h3 class="font-semibold mb-2">SOAR</h3>
+          <p>Splunk SOAR ▪️ Azure Logic Apps</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / Labs -->
+    <section id="playbooks" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Playbooks SOC</h2>
+      <p class="mb-4">Automatisations et guides de réponse aux incidents disponibles sur GitHub :</p>
+      <a href="https://github.com/LAHAT-FALL/playbooks-soc" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-900 transition">Voir les playbooks ↗︎</a>
+    </section>
+
+    <section id="blog" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Articles & Labs</h2>
+      <p class="mb-4">Je publie régulièrement des write‑ups de CTF et des laboratoires pratiques sur mon dépôt GitHub :</p>
+      <a href="https://github.com/LAHAT-FALL/labs" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-900 transition">Voir les articles &nbsp;↗︎</a>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Compétences défensives</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <ul class="list-disc pl-6 space-y-2 text-base text-gray-800 dark:text-gray-100">
+          <li>Architectures réseau sécurisées</li>
+          <li>Pare‑feux&nbsp;: pfSense, Cisco ASA, Palo Alto</li>
+          <li>SIEM&nbsp;: Splunk, ELK, Wazuh</li>
+          <li>Analyse réseau&nbsp;: Zeek, Wireshark, tcpdump</li>
+          <li>IDS/IPS&nbsp;: Suricata, Snort, OSSEC</li>
+          <li>Triage d’alertes & affinage de règles</li>
+          <li>Création de playbooks de réponse aux incidents</li>
+          <li>Onboarding de sources de logs (Windows, Linux, SaaS, Cloud)</li>
+          <li>Analyse de cause racine & reporting post‑incident</li>
+        </ul>
+        <ul class="list-disc pl-6 space-y-2 text-base text-gray-800 dark:text-gray-100">
+          <li>Gestion des vulnérabilités&nbsp;: CVSS, EPSS</li>
+          <li>Forensic de base&nbsp;: Volatility, FTK Imager</li>
+          <li>Standards : ISO 27001/27005, OWASP Top 10</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Compétences web full‑stack -->
+    <section id="web" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-green-500 text-gray-900 dark:text-white">Compétences en programmation web Full‑Stack</h2>
+      <div class="grid sm:grid-cols-2 gap-4 text-base text-gray-800 dark:text-gray-100">
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Front‑end : HTML5, CSS3, Tailwind CSS</li>
+          <li>JavaScript / TypeScript</li>
+          <li>Frameworks : React, Next.js</li>
+          <li>State management : Redux, Context API</li>
+          <li>UI Components : shadcn/ui, Material UI</li>
+        </ul>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Back‑end : Node.js, Express, <strong>Python (Flask)</strong></li>
+          <li>Bases de données : MongoDB, PostgreSQL</li>
+          <li>API REST & GraphQL</li>
+          <li>Langages bas niveau : C / C++</li>
+          <li>Java : notions OOP, Spring Boot (bases)</li>
+          <li>Tests : Jest, Supertest</li>
+          <li>CI/CD : GitHub Actions, Docker</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Connaissances avancées -->
+    <section id="connaissance" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Connaissances avancées – en cours d’apprentissage</h2>
+      <div class="grid sm:grid-cols-2 gap-4 text-base text-gray-800 dark:text-gray-100">
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Engineering de détection avancée : KQL, Sigma, Elastic DSL <em>(en cours)</em></li>
+          <li>Automatisation SOAR (playbooks multi‑étapes, enrichissement CTI) <em>(en cours)</em></li>
+          <li>Modélisation MITRE ATT&CK : coverage & gap analysis <em>(en cours)</em></li>
+          <li>Machine Learning & UEBA pour détection d’anomalies <em>(en cours)</em></li>
+          <li>Threat Intelligence Feeds : MISP, TAXII, STIX <em>(en cours)</em></li>
+        </ul>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Cloud Detection Engineering : Azure Sentinel, AWS GuardDuty custom rules <em>(en cours)</em></li>
+          <li>Deception & Honeypots (Cowrie, ElasticPot, Canarytokens) <em>(en cours)</em></li>
+          <li>Purple Teaming & simulation ATT&CK (Atomic Red Team, Caldera) <em>(en cours)</em></li>
+          <li>Compliance & SOC Maturity : CIS CSMC, NIST CSF, ISO 27001 <em>(en cours)</em></li>
+          <li>Reporting & KPI : MTTR, MTTD, coverage dashboards <em>(en cours)</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Expérience -->
+    <section id="experience" class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Expérience professionnelle</h2>
+      <ul class="list-disc pl-6 space-y-4 text-base text-gray-800 dark:text-gray-100">
+        <li><strong>Analyste SOC Niveau I</strong> – Cyber‑sen du Sénégal (2025‑…)
+          <br><span class="text-sm">Surveillance 24/7, triage, playbooks Python.</span></li>
+        <li><strong>Stagiaire cybersécurité</strong> – UQAC (2024)<br>
+<span class="text-sm">Projet « Analyse de Risque Cybersécurité » : plateforme web d’évaluation probabiliste des vulnérabilités (réseaux bayésiens), inspirée de l’article de Yermalovich & Mejri. Co‑auteurs : Ibrahim Diakité & Lahat Fall.</span></li>
+        <li><strong>Technicien informatique</strong> – Bell Canada (2023‑2024)
+          <br><span class="text-sm">Support N1, correctifs (‑35 % temps).</span></li>
+        <li><strong>Technicien SI</strong> – Hôtel Chicoutimi (2023‑2024)
+          <br><span class="text-sm">Admin réseau, sauvegardes, formation.</span></li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Certifications</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-amber-500/90 text-white px-3 py-1 rounded-full text-sm">SC‑900 ⏳</span>
+        <span class="bg-amber-500/90 text-white px-3 py-1 rounded-full text-sm">Security+ ⏳</span>
+        <span class="bg-green-600/90 text-white px-3 py-1 rounded-full text-sm">AZ‑900 ✔︎</span>
+        <span class="bg-amber-500/90 text-white px-3 py-1 rounded-full text-sm">AZ‑500 ⏳</span>
+        <span class="bg-green-600/90 text-white px-3 py-1 rounded-full text-sm">Cisco Network Automation ✔︎</span>
+      </div>
+    </section>
+
+    <!-- Formation -->
+    <section class="animate-fade-in">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Formation</h2>
+      <p class="text-base">B.Sc. Informatique – Sécurité des réseaux, UQAC (Diplôme prévu : avril 2025)</p>
+    </section>
+
+    <!-- Langues & intérêts -->
+    <section id="contact" class="grid sm:grid-cols-2 gap-8 animate-fade-in">
+      <div>
+        <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Langues</h2>
+        <ul class="list-disc pl-6 space-y-2 text-base">
+          <li>Français – langue maternelle</li>
+          <li>Anglais – intermédiaire professionnel</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-4 border-l-4 pl-3 border-blue-500 text-gray-900 dark:text-white">Centres d’intérêt</h2>
+        <ul class="list-disc pl-6 space-y-2 text-base">
+          <li>Cybersécurité défensive</li>
+          <li>Threat Hunting</li>
+          <li>Automatisation</li>
+          <li>Forensic</li>
+          <li>Veille technologique</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 dark:bg-gray-800 text-center text-sm py-6 mt-12">
+    <p>&copy; <span id="year"></span> Lahat Fall. Tous droits réservés.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
