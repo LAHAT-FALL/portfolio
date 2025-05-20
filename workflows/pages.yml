@@ -1,20 +1,27 @@
-name: Deploy to GitHub Pages
+name: Deploy static content to GitHub Pages
+
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
 
+# Permissions requises par Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Empêche deux déploiements concurrents
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  # Étape « build » – pour un site statique, on se contente de packager
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v2
-        with:
-          path: .
-      - uses: actions/deploy-pages@v2
+
+      # 👉 Si tu n’as rien à « builder », on laisse juste un echo
+      - name: Build step (no
+
