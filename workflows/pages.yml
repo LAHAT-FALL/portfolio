@@ -5,9 +5,9 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: read       # lecture du repo
-  pages: write         # publier sur Pages
-  id-token: write      # OIDC pour Pages
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -17,15 +17,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1) Cloner le dépôt
       - uses: actions/checkout@v4
 
-      # 2) Aucune étape de build nécessaire (HTML statique)
-      - name: Build step (nothing to build)
-        run: echo "Skip build"
+      - name: Build (nothing to compile)
+        run: echo "Static site – skip build"
 
-      # 3) Packager le contenu du repo pour Pages
-      - uses: actions/upload-pages-artifact@v2
+      - name: Upload artifact to Pages
+        uses: actions/upload-pages-artifact@v2
         with:
           path: .
 
@@ -35,8 +33,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      # 4) Déployer l'artefact sur GitHub Pages
       - id: deployment
         uses: actions/deploy-pages@v2
